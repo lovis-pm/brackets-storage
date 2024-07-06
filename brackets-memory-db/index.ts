@@ -67,6 +67,7 @@ export class InMemoryDatabase implements CrudInterface {
         values: OmitId<T> | OmitId<T>[],
     ): Promise<number> | Promise<boolean> {
         let id = this.data[table].length > 0
+            // @ts-ignore
             ? (Math.max(...this.data[table].map(d => d.id)) + 1)
             : 0;
 
